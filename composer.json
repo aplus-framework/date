@@ -1,11 +1,11 @@
 {
 	"name": "framework/date",
 	"type": "library",
-	"description": "The Date package",
+	"description": "The Framework Date Library",
 	"keywords": [
 		"date"
 	],
-	"homepage": "https://gitlab.com/the-framework/date",
+	"homepage": "https://the-framework.gitlab.io/libraries/date.html",
 	"license": "proprietary",
 	"authors": [
 		{
@@ -53,9 +53,9 @@
 	},
 	"support": {
 		"email": "natanfelles@gmail.com",
-		"issues": "https://gitlab.com/the-framework/date/issues",
-		"wiki": "https://gitlab.com/the-framework/packages/date",
-		"source": "https://gitlab.com/the-framework/date",
-		"docs": "https://the-framework.gitlab.io/the-framework/packages/date/docs"
+		"issues": "https://gitlab.com/the-framework/libraries/date/issues",
+		"wiki": "https://gitlab.com/the-framework/libraries/date/wikis/home",
+		"source": "https://gitlab.com/the-framework/libraries/date",
+		"docs": "https://the-framework.gitlab.io/libraries/date/docs/"
 	}
 }
