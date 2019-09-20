@@ -6,7 +6,7 @@
 		"date"
 	],
 	"homepage": "https://the-framework.gitlab.io/libraries/date.html",
-	"license": "proprietary",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Natan Felles",
