@@ -23,9 +23,11 @@ class Date extends \DateTime implements \JsonSerializable
 	}
 
 	/**
-	 * @param string             $format
-	 * @param string             $time
-	 * @param \DateTimeZone|null $timezone
+	 * Parse a string into a new Date object according to the specified format.
+	 *
+	 * @param string             $format   format accepted by date()
+	 * @param string             $time     string representing the time
+	 * @param \DateTimeZone|null $timezone a DateTimeZone object representing the desired time zone
 	 *
 	 * @return Date|false
 	 */
