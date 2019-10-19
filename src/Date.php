@@ -9,8 +9,7 @@
  */
 class Date extends \DateTime implements \JsonSerializable
 {
-	public const MYSQL = 'Y-m-d H:i:s';
-	public const COOKIE = 'l, d-M-Y H:i:s T';
+	public const DATETIME = 'Y-m-d H:i:s';
 
 	public function __toString()
 	{
@@ -34,6 +33,17 @@ class Date extends \DateTime implements \JsonSerializable
 	public static function createFromFormat($format, $time, \DateTimeZone $timezone = null)
 	{
 		$object = parent::createFromFormat($format, $time, $timezone);
+		return $object ? new static($object->format(static::ATOM)) : $object;
+	}
+
+	/**
+	 * @param \DateTimeImmutable $datetTimeImmutable
+	 *
+	 * @return Date
+	 */
+	public static function createFromImmutable($datetTimeImmutable)
+	{
+		$object = parent::createFromImmutable($datetTimeImmutable);
 		return $object ? new static($object->format(static::ATOM)) : $object;
 	}
 }

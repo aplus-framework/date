@@ -15,11 +15,15 @@ class DateTest extends TestCase
 		$this->date = new Date();
 	}
 
-	public function testCreateFromFormat()
+	public function testCreateFrom()
 	{
 		$this->assertInstanceOf(
 			Date::class,
 			Date::createFromFormat('Y-m-d H:i:s', '2019-07-12 22:46:20')
+		);
+		$this->assertInstanceOf(
+			Date::class,
+			Date::createFromImmutable(new \DateTimeImmutable())
 		);
 	}
 
@@ -35,7 +39,15 @@ class DateTest extends TestCase
 
 	public function testConstants()
 	{
-		$this->assertEquals(\date('Y-m-d H:i:s'), $this->date->format($this->date::MYSQL));
-		$this->assertEquals(\date(\DATE_COOKIE), $this->date->format($this->date::COOKIE));
+		$this->assertEquals(\date('Y-m-d H:i:s'), $this->date->format($this->date::DATETIME));
+	}
+
+	public function testInstance()
+	{
+		$date = new Date();
+		$date = $date->setDate(2019, 12, 24);
+		$this->assertInstanceOf(Date::class, $date);
+		$date = $date->setTime(15, 15);
+		$this->assertInstanceOf(Date::class, $date);
 	}
 }
