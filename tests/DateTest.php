@@ -3,7 +3,7 @@
 use Framework\Date\Date;
 use PHPUnit\Framework\TestCase;
 
-class DateTest extends TestCase
+final class DateTest extends TestCase
 {
 	protected Date $date;
 
@@ -12,7 +12,7 @@ class DateTest extends TestCase
 		$this->date = new Date();
 	}
 
-	public function testCreateFrom()
+	public function testCreateFrom() : void
 	{
 		$this->assertInstanceOf(
 			Date::class,
@@ -24,22 +24,22 @@ class DateTest extends TestCase
 		);
 	}
 
-	public function testJsonSerialize()
+	public function testJsonSerialize() : void
 	{
 		$this->assertEquals(\json_encode(\date(\DATE_ATOM)), \json_encode($this->date));
 	}
 
-	public function testToString()
+	public function testToString() : void
 	{
 		$this->assertEquals(\date(\DATE_ATOM), (string) $this->date);
 	}
 
-	public function testConstants()
+	public function testConstants() : void
 	{
 		$this->assertEquals(\date('Y-m-d H:i:s'), $this->date->format($this->date::DATETIME));
 	}
 
-	public function testInstance()
+	public function testInstance() : void
 	{
 		$date = new Date();
 		$date = $date->setDate(2019, 12, 24);
