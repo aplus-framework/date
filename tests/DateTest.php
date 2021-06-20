@@ -14,11 +14,11 @@ final class DateTest extends TestCase
 
 	public function testCreateFrom() : void
 	{
-		$this->assertInstanceOf(
+		self::assertInstanceOf(
 			Date::class,
 			Date::createFromFormat('Y-m-d H:i:s', '2019-07-12 22:46:20')
 		);
-		$this->assertInstanceOf(
+		self::assertInstanceOf(
 			Date::class,
 			Date::createFromImmutable(new \DateTimeImmutable())
 		);
@@ -26,25 +26,25 @@ final class DateTest extends TestCase
 
 	public function testJsonSerialize() : void
 	{
-		$this->assertEquals(\json_encode(\date(\DATE_ATOM)), \json_encode($this->date));
+		self::assertSame(\json_encode(\date(\DATE_ATOM)), \json_encode($this->date));
 	}
 
 	public function testToString() : void
 	{
-		$this->assertEquals(\date(\DATE_ATOM), (string) $this->date);
+		self::assertSame(\date(\DATE_ATOM), (string) $this->date);
 	}
 
 	public function testConstants() : void
 	{
-		$this->assertEquals(\date('Y-m-d H:i:s'), $this->date->format($this->date::DATETIME));
+		self::assertSame(\date('Y-m-d H:i:s'), $this->date->format($this->date::DATETIME));
 	}
 
 	public function testInstance() : void
 	{
 		$date = new Date();
 		$date = $date->setDate(2019, 12, 24);
-		$this->assertInstanceOf(Date::class, $date);
+		self::assertInstanceOf(Date::class, $date);
 		$date = $date->setTime(15, 15);
-		$this->assertInstanceOf(Date::class, $date);
+		self::assertInstanceOf(Date::class, $date);
 	}
 }
