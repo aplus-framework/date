@@ -1,5 +1,10 @@
 <?php namespace Framework\Date;
 
+use DateTime;
+use DateTimeImmutable;
+use DateTimeZone;
+use JsonSerializable;
+
 /**
  * Class Date.
  *
@@ -7,7 +12,7 @@
  * @see     https://www.php.net/manual/en/intldateformatter.format.php#refsect1-intldateformatter.format-changelog
  * @see     https://www.php.net/manual/en/function.strftime.php
  */
-class Date extends \DateTime implements \JsonSerializable
+class Date extends DateTime implements JsonSerializable
 {
 	public const DATETIME = 'Y-m-d H:i:s';
 
@@ -26,18 +31,18 @@ class Date extends \DateTime implements \JsonSerializable
 	 *
 	 * @param string             $format   format accepted by date()
 	 * @param string             $time     string representing the time
-	 * @param \DateTimeZone|null $timezone a DateTimeZone object representing the desired time zone
+	 * @param DateTimeZone|null $timezone a DateTimeZone object representing the desired time zone
 	 *
 	 * @return Date|false
 	 */
-	public static function createFromFormat($format, $time, \DateTimeZone $timezone = null)
+	public static function createFromFormat($format, $time, DateTimeZone $timezone = null)
 	{
 		$object = parent::createFromFormat($format, $time, $timezone);
 		return $object ? new static($object->format(static::ATOM)) : $object;
 	}
 
 	/**
-	 * @param \DateTimeImmutable $datetTimeImmutable
+	 * @param DateTimeImmutable $datetTimeImmutable
 	 *
 	 * @return Date
 	 */
