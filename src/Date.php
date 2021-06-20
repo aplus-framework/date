@@ -3,6 +3,7 @@
 use DateTime;
 use DateTimeImmutable;
 use DateTimeZone;
+use Exception;
 use JsonSerializable;
 
 /**
@@ -15,6 +16,11 @@ use JsonSerializable;
 class Date extends DateTime implements JsonSerializable
 {
 	public const DATETIME = 'Y-m-d H:i:s';
+
+	final public function __construct(string $datetime = 'now', DateTimeZone $timezone = null)
+	{
+		parent::__construct($datetime, $timezone);
+	}
 
 	public function __toString()
 	{
@@ -33,7 +39,9 @@ class Date extends DateTime implements JsonSerializable
 	 * @param string $time A string representing the time
 	 * @param DateTimeZone|null $timezone A DateTimeZone object representing the desired time zone
 	 *
-	 * @return Date|false
+	 * @throws Exception Emits Exception in case of an error
+	 *
+	 * @return false|static
 	 */
 	public static function createFromFormat($format, $time, DateTimeZone $timezone = null)
 	{
@@ -44,11 +52,13 @@ class Date extends DateTime implements JsonSerializable
 	/**
 	 * @param DateTimeImmutable $datetTimeImmutable
 	 *
-	 * @return Date
+	 * @throws Exception Emits Exception in case of an error
+	 *
+	 * @return static
 	 */
 	public static function createFromImmutable($datetTimeImmutable)
 	{
 		$object = parent::createFromImmutable($datetTimeImmutable);
-		return $object ? new static($object->format(static::ATOM)) : $object;
+		return new static($object->format(static::ATOM));
 	}
 }
