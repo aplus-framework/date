@@ -8,9 +8,9 @@ use JsonSerializable;
 /**
  * Class Date.
  *
- * @see     https://www.php.net/manual/en/intldateformatter.format.php#106070
- * @see     https://www.php.net/manual/en/intldateformatter.format.php#refsect1-intldateformatter.format-changelog
- * @see     https://www.php.net/manual/en/function.strftime.php
+ * @see https://www.php.net/manual/en/intldateformatter.format.php#106070
+ * @see https://www.php.net/manual/en/intldateformatter.format.php#refsect1-intldateformatter.format-changelog
+ * @see https://www.php.net/manual/en/function.strftime.php
  */
 class Date extends DateTime implements JsonSerializable
 {
@@ -29,9 +29,9 @@ class Date extends DateTime implements JsonSerializable
 	/**
 	 * Parse a string into a new Date object according to the specified format.
 	 *
-	 * @param string             $format   format accepted by date()
-	 * @param string             $time     string representing the time
-	 * @param DateTimeZone|null $timezone a DateTimeZone object representing the desired time zone
+	 * @param string $format Format accepted by date()
+	 * @param string $time A string representing the time
+	 * @param DateTimeZone|null $timezone A DateTimeZone object representing the desired time zone
 	 *
 	 * @return Date|false
 	 */
