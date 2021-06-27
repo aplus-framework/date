@@ -46,7 +46,7 @@ class Date extends DateTime implements JsonSerializable, Stringable
 	 * Parse a string into a new Date object according to the specified format.
 	 *
 	 * @param string $format Format accepted by date()
-	 * @param string $time A string representing the time
+	 * @param string $datetime A string representing the time
 	 * @param DateTimeZone|null $timezone A DateTimeZone object representing the desired time zone
 	 *
 	 * @throws Exception Emits Exception in case of an error
@@ -55,23 +55,23 @@ class Date extends DateTime implements JsonSerializable, Stringable
 	 */
 	public static function createFromFormat(
 		$format,
-		$time,
+		$datetime,
 		DateTimeZone $timezone = null
 	) : static | false {
-		$object = parent::createFromFormat($format, $time, $timezone);
+		$object = parent::createFromFormat($format, $datetime, $timezone);
 		return $object ? new static($object->format(static::ATOM)) : $object;
 	}
 
 	/**
-	 * @param DateTimeImmutable $datetTimeImmutable
+	 * @param DateTimeImmutable $object
 	 *
 	 * @throws Exception Emits Exception in case of an error
 	 *
 	 * @return static
 	 */
-	public static function createFromImmutable($datetTimeImmutable) : static
+	public static function createFromImmutable(DateTimeImmutable $object) : static
 	{
-		$object = parent::createFromImmutable($datetTimeImmutable);
+		$object = parent::createFromImmutable($object);
 		return new static($object->format(static::ATOM));
 	}
 }
