@@ -37,7 +37,7 @@ class Date extends DateTime implements JsonSerializable, Stringable
 		return $this->format(static::ATOM);
 	}
 
-	public function jsonSerialize()
+	public function jsonSerialize() : string
 	{
 		return $this->format(static::ATOM);
 	}
@@ -53,8 +53,11 @@ class Date extends DateTime implements JsonSerializable, Stringable
 	 *
 	 * @return false|static
 	 */
-	public static function createFromFormat($format, $time, DateTimeZone $timezone = null)
-	{
+	public static function createFromFormat(
+		$format,
+		$time,
+		DateTimeZone $timezone = null
+	) : static | false {
 		$object = parent::createFromFormat($format, $time, $timezone);
 		return $object ? new static($object->format(static::ATOM)) : $object;
 	}
@@ -66,7 +69,7 @@ class Date extends DateTime implements JsonSerializable, Stringable
 	 *
 	 * @return static
 	 */
-	public static function createFromImmutable($datetTimeImmutable)
+	public static function createFromImmutable($datetTimeImmutable) : static
 	{
 		$object = parent::createFromImmutable($datetTimeImmutable);
 		return new static($object->format(static::ATOM));
