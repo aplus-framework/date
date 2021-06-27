@@ -14,6 +14,7 @@ use DateTimeImmutable;
 use DateTimeZone;
 use Exception;
 use JsonSerializable;
+use Stringable;
 
 /**
  * Class Date.
@@ -22,7 +23,7 @@ use JsonSerializable;
  * @see https://www.php.net/manual/en/intldateformatter.format.php#refsect1-intldateformatter.format-changelog
  * @see https://www.php.net/manual/en/function.strftime.php
  */
-class Date extends DateTime implements JsonSerializable
+class Date extends DateTime implements JsonSerializable, Stringable
 {
 	public const DATETIME = 'Y-m-d H:i:s';
 
@@ -31,7 +32,7 @@ class Date extends DateTime implements JsonSerializable
 		parent::__construct($datetime, $timezone);
 	}
 
-	public function __toString()
+	public function __toString() : string
 	{
 		return $this->format(static::ATOM);
 	}
