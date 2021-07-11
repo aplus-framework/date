@@ -43,11 +43,12 @@ class Date extends DateTime implements JsonSerializable, Stringable
 	}
 
 	/**
-	 * Parse a string into a new Date object according to the specified format.
+	 * Parse a string into a new static object according to the specified format.
 	 *
 	 * @param string $format Format accepted by date()
 	 * @param string $datetime A string representing the time
-	 * @param DateTimeZone|null $timezone A DateTimeZone object representing the desired time zone
+	 * @param DateTimeZone|null $timezone A DateTimeZone object representing the
+	 * desired time zone
 	 *
 	 * @throws Exception Emits Exception in case of an error
 	 *
