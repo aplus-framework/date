@@ -1,12 +1,12 @@
 {
-    "name": "natanfelles/date",
+    "name": "aplus/date",
     "type": "library",
-    "description": "The Framework Date Library",
+    "description": "Aplus Framework Date Library",
     "keywords": [
         "date",
         "datetime"
     ],
-    "homepage": "https://the-framework.gitlab.io/libraries/date.html",
+    "homepage": "https://aplus-framework.com/docs/date",
     "license": "MIT",
     "authors": [
         {
@@ -47,9 +47,9 @@
     "prefer-stable": true,
     "support": {
         "email": "natanfelles@gmail.com",
-        "issues": "https://gitlab.com/the-framework/libraries/date/issues",
-        "wiki": "https://gitlab.com/the-framework/libraries/date/wikis/home",
-        "source": "https://gitlab.com/the-framework/libraries/date",
-        "docs": "https://the-framework.gitlab.io/libraries/date/docs/"
+        "issues": "https://gitlab.com/aplus-framework/libraries/date/issues",
+        "wiki": "https://gitlab.com/aplus-framework/libraries/date/wikis/home",
+        "source": "https://gitlab.com/aplus-framework/libraries/date",
+        "docs": "https://aplus-framework.gitlab.io/libraries/date/docs/"
     }
 }
