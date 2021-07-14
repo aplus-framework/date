@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /*
- * This file is part of The Framework Date Library.
+ * This file is part of Aplus Framework Date Library.
  *
  * (c) Natan Felles <natanfelles@gmail.com>
  *
