@@ -22,6 +22,8 @@ use Stringable;
  * @see https://www.php.net/manual/en/intldateformatter.format.php#106070
  * @see https://www.php.net/manual/en/intldateformatter.format.php#refsect1-intldateformatter.format-changelog
  * @see https://www.php.net/manual/en/function.strftime.php
+ *
+ * @package date
  */
 class Date extends DateTime implements JsonSerializable, Stringable
 {
