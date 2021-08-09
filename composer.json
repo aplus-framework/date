@@ -6,7 +6,7 @@
         "date",
         "datetime"
     ],
-    "homepage": "https://aplus-framework.com/docs/date",
+    "homepage": "https://docs.aplus-framework.com/guides/libraries/date/",
     "license": "MIT",
     "authors": [
         {
@@ -50,6 +50,6 @@
         "issues": "https://gitlab.com/aplus-framework/libraries/date/issues",
         "wiki": "https://gitlab.com/aplus-framework/libraries/date/wikis/home",
         "source": "https://gitlab.com/aplus-framework/libraries/date",
-        "docs": "https://aplus-framework.gitlab.io/libraries/date/docs/"
+        "docs": "https://docs.aplus-framework.com/guides/libraries/date/"
     }
 }
