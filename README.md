@@ -1,7 +1,6 @@
 # Aplus Framework Date Library
 
-- [Homepage](https://aplus-framework.com/docs/date)
-- [API Documentation](https://aplus-framework.gitlab.io/libraries/date/docs/)
+- [Documentation](https://docs.aplus-framework.com/guides/libraries/date/)
 
 [![Pipeline](https://gitlab.com/aplus-framework/libraries/date/badges/master/pipeline.svg)](https://gitlab.com/aplus-framework/libraries/date/-/pipelines?scope=branches)
 [![Coverage](https://gitlab.com/aplus-framework/libraries/date/badges/master/coverage.svg?job=test:php)](https://aplus-framework.gitlab.io/libraries/date/coverage/)
