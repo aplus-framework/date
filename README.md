@@ -1,3 +1,5 @@
+<a href="https://gitlab.com/aplus-framework/libraries/date"><img src="https://gitlab.com/aplus-framework/libraries/date/-/raw/master/guide/image.png" alt="Aplus Framework Date Library" align="right" width="100"></a>
+
 # Aplus Framework Date Library
 
 - [User Guide](https://docs.aplus-framework.com/guides/libraries/date/index.html)
