@@ -6,7 +6,7 @@
         "date",
         "datetime"
     ],
-    "homepage": "https://docs.aplus-framework.com/guides/libraries/date/",
+    "homepage": "https://aplus-framework.com/packages/date",
     "license": "MIT",
     "authors": [
         {
@@ -48,13 +48,13 @@
     "support": {
         "email": "support@aplus-framework.com",
         "issues": "https://gitlab.com/aplus-framework/libraries/date/issues",
-        "wiki": "https://gitlab.com/aplus-framework/libraries/date/wikis/home",
+        "forum": "https://aplus-framework.com/forum",
         "source": "https://gitlab.com/aplus-framework/libraries/date",
         "docs": "https://docs.aplus-framework.com/guides/libraries/date/"
     },
     "funding": [
         {
-            "type": "other",
+            "type": "Aplus Sponsor",
             "url": "https://aplus-framework.com/sponsor"
         }
     ]
