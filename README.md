@@ -2,10 +2,11 @@
 
 # Aplus Framework Date Library
 
-- [Homepage](https://aplus-framework.com/packages/date)
+- [Home](https://aplus-framework.com/packages/date)
 - [User Guide](https://docs.aplus-framework.com/guides/libraries/date/index.html)
 - [API Documentation](https://docs.aplus-framework.com/packages/date.html)
 
+[![tests](https://github.com/aplus-framework/date/actions/workflows/tests.yml/badge.svg)](https://github.com/aplus-framework/date/actions/workflows/tests.yml)
 [![pipeline](https://gitlab.com/aplus-framework/libraries/date/badges/master/pipeline.svg)](https://gitlab.com/aplus-framework/libraries/date/-/pipelines?scope=branches)
 [![coverage](https://gitlab.com/aplus-framework/libraries/date/badges/master/coverage.svg?job=test:php)](https://aplus-framework.gitlab.io/libraries/date/coverage/)
 [![packagist](https://img.shields.io/packagist/v/aplus/date)](https://packagist.org/packages/aplus/date)
