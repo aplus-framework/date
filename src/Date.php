@@ -13,6 +13,7 @@ use DateTime;
 use DateTimeImmutable;
 use DateTimeZone;
 use Exception;
+use Framework\Language\Language;
 use JsonSerializable;
 use Stringable;
 
@@ -28,15 +29,37 @@ use Stringable;
 class Date extends DateTime implements JsonSerializable, Stringable
 {
     public const DATETIME = 'Y-m-d H:i:s';
+    protected Language $language;
 
-    final public function __construct(string $datetime = 'now', DateTimeZone $timezone = null)
-    {
+    final public function __construct(
+        string $datetime = 'now',
+        DateTimeZone $timezone = null,
+        Language $language = null
+    ) {
         parent::__construct($datetime, $timezone);
+        if ($language) {
+            $this->setLanguage($language);
+        }
     }
 
     public function __toString() : string
     {
         return $this->format(static::ATOM);
+    }
+
+    public function setLanguage(Language $language) : static
+    {
+        $this->language = $language;
+        $this->language->addDirectory(__DIR__ . '/Languages');
+        return $this;
+    }
+
+    public function getLanguage() : Language
+    {
+        if ( ! isset($this->language)) {
+            $this->setLanguage(new Language());
+        }
+        return $this->language;
     }
 
     public function jsonSerialize() : string
