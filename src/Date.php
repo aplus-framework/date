@@ -62,6 +62,36 @@ class Date extends DateTime implements JsonSerializable, Stringable
         return $this->language;
     }
 
+    public function humanize() : string
+    {
+        $timeDifference = $this->getTimestamp() - \time();
+        $language = $this->getLanguage();
+        $condition = [
+            12 * 30 * 24 * 60 * 60 => 'years',
+            30 * 24 * 60 * 60 => 'months',
+            7 * 24 * 60 * 60 => 'weeks',
+            24 * 60 * 60 => 'days',
+            60 * 60 => 'hours',
+            60 => 'minutes',
+            1 => 'seconds',
+        ];
+        $timing = 'in';
+        if ($timeDifference < 0) {
+            $timeDifference *= -1;
+            $timing = 'ago';
+        }
+        foreach ($condition as $seconds => $line) {
+            $diff = $timeDifference / $seconds;
+            if ($diff >= 1) {
+                $arg = \round($diff);
+                return $language->render('date', $timing, [
+                    $language->render('date', $line, [$arg]),
+                ]);
+            }
+        }
+        return $language->render('date', 'now');
+    }
+
     public function jsonSerialize() : string
     {
         return $this->format(static::ATOM);
