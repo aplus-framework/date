@@ -113,8 +113,7 @@ class Date extends DateTime implements JsonSerializable, Stringable
         $format,
         $datetime,
         DateTimeZone $timezone = null
-    ) : static | false
-    {
+    ) : static | false {
         $object = parent::createFromFormat($format, $datetime, $timezone);
         return $object ? new static($object->format(static::ATOM)) : $object;
     }
