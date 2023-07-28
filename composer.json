@@ -17,9 +17,9 @@
     "homepage": "https://aplus-framework.com/packages/date",
     "support": {
         "email": "support@aplus-framework.com",
-        "issues": "https://gitlab.com/aplus-framework/libraries/date/issues",
+        "issues": "https://github.com/aplus-framework/date/issues",
         "forum": "https://aplus-framework.com/forum",
-        "source": "https://gitlab.com/aplus-framework/libraries/date",
+        "source": "https://github.com/aplus-framework/date",
         "docs": "https://docs.aplus-framework.com/guides/libraries/date/"
     },
     "funding": [
