@@ -56,7 +56,7 @@ class Date extends DateTime implements JsonSerializable, Stringable
 
     public function getLanguage() : Language
     {
-        if ( ! isset($this->language)) {
+        if (!isset($this->language)) {
             $this->setLanguage(new Language());
         }
         return $this->language;
