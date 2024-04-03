@@ -59,9 +59,27 @@ final class DateTest extends TestCase
     }
 
     /**
+     * @dataProvider humanizeProvider
+     *
+     * @param string $datetime
+     * @param string $text
+     */
+    public function testHumanize(string $datetime, string $text) : void
+    {
+        $date = new Date($datetime);
+        self::assertSame($text, $date->humanize());
+    }
+
+    public function testHumanizeLocalized() : void
+    {
+        $date = new Date('+10 minutes', language: new Language('pt-br'));
+        self::assertSame('em 10 minutos', $date->humanize());
+    }
+
+    /**
      * @return array<array<string>>
      */
-    public function humanizeProvider() : array
+    public static function humanizeProvider() : array
     {
         return [
             ['now', 'just now'],
@@ -94,23 +112,5 @@ final class DateTest extends TestCase
             ['-3 years', '3 years ago'],
             ['+3 years', 'in 3 years'],
         ];
-    }
-
-    /**
-     * @dataProvider humanizeProvider
-     *
-     * @param string $datetime
-     * @param string $text
-     */
-    public function testHumanize(string $datetime, string $text) : void
-    {
-        $date = new Date($datetime);
-        self::assertSame($text, $date->humanize());
-    }
-
-    public function testHumanizeLocalized() : void
-    {
-        $date = new Date('+10 minutes', language: new Language('pt-br'));
-        self::assertSame('em 10 minutos', $date->humanize());
     }
 }
