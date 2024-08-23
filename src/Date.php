@@ -33,8 +33,8 @@ class Date extends DateTime implements JsonSerializable, Stringable
 
     final public function __construct(
         string $datetime = 'now',
-        DateTimeZone $timezone = null,
-        Language $language = null
+        ?DateTimeZone $timezone = null,
+        ?Language $language = null
     ) {
         parent::__construct($datetime, $timezone);
         if ($language) {
@@ -112,8 +112,8 @@ class Date extends DateTime implements JsonSerializable, Stringable
     public static function createFromFormat(
         string $format,
         string $datetime,
-        DateTimeZone $timezone = null
-    ) : static | false {
+        ?DateTimeZone $timezone = null
+    ) : false | static {
         $object = parent::createFromFormat($format, $datetime, $timezone);
         return $object ? new static($object->format(static::ATOM)) : $object;
     }
