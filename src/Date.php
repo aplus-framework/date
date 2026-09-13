@@ -9,6 +9,7 @@
  */
 namespace Framework\Date;
 
+use DateMalformedStringException;
 use DateTime;
 use DateTimeImmutable;
 use DateTimeZone;
@@ -16,6 +17,7 @@ use Exception;
 use Framework\Language\Language;
 use JsonSerializable;
 use Stringable;
+use ValueError;
 
 /**
  * Class Date.
@@ -105,17 +107,25 @@ class Date extends DateTime implements JsonSerializable, Stringable
      * @param DateTimeZone|null $timezone A DateTimeZone object representing the
      * desired time zone
      *
-     * @throws Exception Emits Exception in case of an error
+     * @throws DateMalformedStringException when format or datetime contains errors
+     * @throws ValueError when the datetime contains NULL-bytes
      *
-     * @return false|static
+     * @return static
      */
     public static function createFromFormat(
         string $format,
         string $datetime,
         ?DateTimeZone $timezone = null
-    ) : false | static {
+    ) : static {
         $object = parent::createFromFormat($format, $datetime, $timezone);
-        return $object ? new static($object->format(static::ATOM)) : $object;
+        if ($object === false || $object::getLastErrors()) {
+            throw new DateMalformedStringException(
+                'Could not create an object with the format "'
+                . $format
+                . '" from the datetime "' . $datetime . '"'
+            );
+        }
+        return $object;
     }
 
     /**

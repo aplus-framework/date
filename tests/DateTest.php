@@ -22,12 +22,21 @@ final class DateTest extends TestCase
         $this->date = new Date();
     }
 
-    public function testCreateFrom() : void
+    public function testCreateFromFormat() : void
     {
         self::assertInstanceOf(
             Date::class,
             Date::createFromFormat('Y-m-d H:i:s', '2019-07-12 22:46:20')
         );
+        $this->expectException(\DateMalformedStringException::class);
+        $this->expectExceptionMessage(
+            'Could not create an object with the format "Y-m-d" from the datetime "2026-13-01"'
+        );
+        Date::createFromFormat('Y-m-d', '2026-13-01');
+    }
+
+    public function testCreateFromImmutable() : void
+    {
         self::assertInstanceOf(
             Date::class,
             Date::createFromImmutable(new \DateTimeImmutable())

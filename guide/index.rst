@@ -37,6 +37,19 @@ Example using the ``__toString`` method:
     $date = new Date();
     echo $date; // 2019-11-08T15:40:57-03:00
 
+Create From Format
+##################
+
+Unlike the parent class, **DateTime**, the ``createFromFormat`` method throws an
+**DateMalformedStringException** in the event of errors and does not return ``false``.
+
+Example of exception using the ``createFromFormat`` method:
+
+.. code-block:: php
+
+    // Throws DateMalformedStringException
+    Date::createFromFormat('Y-m-d', '2026-13-01');
+
 Humanize
 ########
 
