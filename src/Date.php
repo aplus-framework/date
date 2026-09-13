@@ -46,6 +46,11 @@ class Date extends DateTime implements JsonSerializable, Stringable
 
     public function __toString() : string
     {
+        return $this->toString();
+    }
+
+    public function toString() : string
+    {
         return $this->format(static::ATOM);
     }
 
@@ -96,7 +101,7 @@ class Date extends DateTime implements JsonSerializable, Stringable
 
     public function jsonSerialize() : string
     {
-        return $this->format(static::ATOM);
+        return $this->toString();
     }
 
     /**
