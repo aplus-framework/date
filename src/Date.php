@@ -30,7 +30,7 @@ use ValueError;
  */
 class Date extends DateTime implements JsonSerializable, Stringable
 {
-    public const DATETIME = 'Y-m-d H:i:s';
+    public const string DATETIME = 'Y-m-d H:i:s';
     protected Language $language;
 
     final public function __construct(
