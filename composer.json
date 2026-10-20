@@ -46,7 +46,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Framework\\Date\\": "src/"
+            "Aplus\\Date\\": "src/"
         }
     },
     "autoload-dev": {
