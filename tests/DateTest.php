@@ -9,8 +9,8 @@
  */
 namespace Tests\Date;
 
-use Framework\Date\Date;
-use Framework\Language\Language;
+use Aplus\Date\Date;
+use Aplus\Language\Language;
 use PHPUnit\Framework\TestCase;
 
 final class DateTest extends TestCase
