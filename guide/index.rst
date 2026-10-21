@@ -32,7 +32,7 @@ Example using the ``__toString`` method:
 
 .. code-block:: php
 
-    use Framework\Date\Date;
+    use Aplus\Date\Date;
 
     $date = new Date();
     echo $date; // 2019-11-08T15:40:57-03:00
